@@ -1,17 +1,8 @@
-function climbingStairs(stepcost){
-                 
-    var step = [];                           
-    step[1] = stepcost[1];
-    step[2] = stepcost[2];
- 
-    for (i = 3; i<stepcost.length; i++){
-        step[i] = stepcost[i] + (step[i-2]);  
-    }
-
-    let mincosts = Math.min((step[stepcost.length-2])); 
-    console.log(mincosts);               
-}
-
+function climbingStairs(stepcost) {
+    for (i = stepcost.length - 3; ~i; i--)
+        stepcost[i] += Math.min(stepcost[i+1], stepcost[i+2])
+    return Math.min(stepcost[0], stepcost[1])
+};
 climbingStairs([0, 2, 2, 1]) 
 climbingStairs([0, 2, 3, 2]) 
 climbingStairs([10, 15, 20]) 
