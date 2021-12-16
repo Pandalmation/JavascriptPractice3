@@ -3,7 +3,7 @@ function climbstairs(stepcost,minstepcost){
 
     for (i = 2; i < stepcost.length; i++){
         steps[0] = stepcost[0];
-    steps[1] = stepcost[1];
+        steps[1] = stepcost[1];
         steps[i] = stepcost[i] + Math.min(steps[i-2], steps[i-1]);
     }
     
