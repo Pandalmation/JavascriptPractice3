@@ -1,5 +1,5 @@
 function climbingStairs(stepcost) {
-    for (i = stepcost.length - 3; ~i; i--)
+    for (i = stepcost.length - 3; i >= -1; i--)
         stepcost[i] += Math.min(stepcost[i+1], stepcost[i+2])
     return Math.min(stepcost[0], stepcost[1])
 };
